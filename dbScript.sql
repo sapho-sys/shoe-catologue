@@ -9,3 +9,9 @@ CREATE TABLE shoes(
 
 INSERT INTO shoes(color, brand , size , price, in_stock) 
 VALUES ('Black', 'Nike', 7, 1350, 4);
+INSERT INTO shoes(color, brand, size, price, in_stock)
+VALUES ('Blue', 'Adidas', 5, 1000, 7);
+INSERT INTO shoes(color, brand, size, price, in_stock)
+VALUES ('White', 'Puma', 7, 1000,5);
+INSERT INTO shoes(color, brand, size, price, in_stock)
+VALUES ('Blue', 'Adidas', 2, 1000, 8);
