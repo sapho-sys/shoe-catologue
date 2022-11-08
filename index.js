@@ -5,7 +5,7 @@ import session from "express-session";
 import bodyParser from "body-parser";
 import waitersRouters from "./routes/route.js";
 import flash from "express-flash";
-import dataFactory from "./data-factory.js";
+import dataFactory from "./services/data-factory.js";
 import pgPromise from "pg-promise";
 
 const pgp = pgPromise({});
@@ -27,6 +27,8 @@ const shoesDB = dataFactory(db);
 // const myRegies = displayFactory();
 
 let shopRouter = waitersRouters(shoesDB,db);
+app.get('/', shopRouter.defaultRoute);
+
 
 //config express as middleware
 app.engine('handlebars', exphbs.engine());
