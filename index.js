@@ -3,7 +3,7 @@ const app = express();
 import exphbs from "express-handlebars";
 import session from "express-session";
 import bodyParser from "body-parser";
-import waitersRouters from "./routes/route.js";
+import ShoeCatologue from "./routes/route.js";
 import flash from "express-flash";
 import dataFactory from "./services/data-factory.js";
 import pgPromise from "pg-promise";
@@ -26,7 +26,7 @@ const db = pgp(config);
 const shoesDB = dataFactory(db);
 // const myRegies = displayFactory();
 
-let shopRouter = waitersRouters(shoesDB,db);
+let shopRouter = ShoeCatologue(shoesDB,db);
 app.get('/', shopRouter.defaultRoute);
 
 
