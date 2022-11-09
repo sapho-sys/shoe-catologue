@@ -20,10 +20,18 @@ function DataFactory(db){
         brand = $1 AND in_stock > 0`,[color]);
         return colorData;
     }
+
+    async function applyAll(color, brand , size){
+        const getAll = await db.manyOrNone(`SELECT * FROM shoes WHERE
+        color =$1 AND brand = $2 AND size = $3 AND in_stock > 0`[color,brand, size]);
+       
+    }
     return{
         getAll,
         getSize,
-        getBrand
+        getBrand,
+        getColor,
+        applyAll
 
     }
 
