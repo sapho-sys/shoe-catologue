@@ -8,6 +8,9 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -17,8 +20,7 @@
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- Libraries Stylesheet -->
@@ -26,6 +28,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -144,10 +147,13 @@
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <!-- Products Start -->
+                    <script type="text/x-template" class="shoesTemplate">
+                        {{#each shoes}}
                     <div class="container-fluid pt-5">
                         <div class="text-center mb-4">
                             <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
                         </div>
+                     
                         <div class="row px-xl-5 pb-3">
                             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                                 <div class="card product-item border-0 mb-4">
@@ -155,7 +161,7 @@
                                         <img class="img-fluid w-100" src="./img/image.png" alt="">
                                     </div>
                                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
+                                        <h6 class="text-truncate mb-3">{{this.brand}}</h6>
                                         <div class="d-flex justify-content-center">
                                         
                                         </div>
@@ -165,199 +171,104 @@
                                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                                     </div>
                                 </div>
+                               
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                <div class="card product-item border-0 mb-4">
-                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="./img/image.png" alt="">
-                                    </div>
-                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
-                                        <div class="d-flex justify-content-center">
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <!-- <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a> -->
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                <div class="card product-item border-0 mb-4">
-                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="./img/image.png" alt="">
-                                    </div>
-                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
-                                        <div class="d-flex justify-content-center">
-                                           
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <!-- <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a> -->
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                <div class="card product-item border-0 mb-4">
-                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="./img/image.png" alt="">
-                                    </div>
-                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
-                                        <div class="d-flex justify-content-center">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <!-- <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a> -->
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                <div class="card product-item border-0 mb-4">
-                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="./img/image.png" alt="">
-                                    </div>
-                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
-                                        <div class="d-flex justify-content-center">
-                                          
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <!-- <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a> -->
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                <div class="card product-item border-0 mb-4">
-                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="./img/image.png" alt="">
-                                    </div>
-                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
-                                        <div class="d-flex justify-content-center">
-                                          
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <!-- <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a> -->
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                                <div class="card product-item border-0 mb-4">
-                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                        <img class="img-fluid w-100" src="./img/image.png" alt="">
-                                    </div>
-                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                        <h6 class="text-truncate mb-3">Shoes</h6>
-                                        <div class="d-flex justify-content-center">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <!-- <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a> -->
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                        </div>
+
+
 
                         </div>
-                        <!-- Products End -->
+                
 
-
+                   
 
                     </div>
+                    {{/each}}
+                </script>
+                    <!-- Products End -->
+
+
+
                 </div>
             </div>
         </div>
-        <!-- Navbar End -->
+    </div>
+    <!-- Navbar End -->
 
 
-        <!-- Featured Start -->
-        <div class="container-fluid pt-5">
-            <div class="row px-xl-5 pb-3">
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                        <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                        <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
-                    </div>
+    <!-- Featured Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                        <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                        <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                        <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                        <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                        <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                        <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
                 </div>
             </div>
         </div>
-        <!-- Featured End -->
+    </div>
+    <!-- Featured End -->
 
 
 
 
 
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
-            <div class="row px-xl-5 pt-5">
-                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                    <a href="" class="text-decoration-none">
-                        <h1 class="mb-4 display-5 font-weight-semi-bold"><span
-                                class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Trandy</h1>
-                    </a>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span
+                            class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Trandy</h1>
+                </a>
 
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>60536 Robert Baloi Street,
-                        Kuyasa
-                    </p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>saphonkunzi@gmail.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>060 421 6537</p>
-                </div>
-
-
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>60536 Robert Baloi Street,
+                    Kuyasa
+                </p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>saphonkunzi@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>060 421 6537</p>
             </div>
-            <!-- Footer End -->
 
 
-            <!-- Back to Top -->
-            <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        </div>
+        <!-- Footer End -->
 
 
-            <!-- JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-            <!-- Contact Javascript File -->
-            <script src="mail/jqBootstrapValidation.min.js"></script>
-            <script src="mail/contact.js"></script>
 
-            <!-- Template Javascript -->
-            <script src="js/main.js"></script>
-            <script src="/js/shoesService.js"></script>
-            <script src="/js/index.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="./js/client.js"></script>
+        <script src="./js/ApiService.js"></script>
 </body>
 
 </html>

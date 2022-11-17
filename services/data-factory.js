@@ -1,8 +1,9 @@
 function DataFactory(db){
     async function getAll(){
-        const fethData = await db.manyOrNone(`SELECT * FROM shoes WHERE in_stock > 0`);
+        const fethData = await db.manyOrNone(`SELECT * FROM shoes WHERE in_stock > 0`);    
         return fethData;
     }
+    
     async function getSize(size){
         const sizeData = await db.manyOrNone(`SELECT * FROM shoes WHERE 
         size = $1 AND in_stock > 0`,[size]);
