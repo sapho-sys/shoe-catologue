@@ -26,7 +26,7 @@ const db = pgp(config);
 const dataFactory = DataFactory(db);
 const shoeAPI = ShoeAPI(dataFactory);
 
-app.get('/api/shoes', shoeAPI.getByAll);
+app.get('/api/shoes', shoeAPI.getData);
 app.get('/api/shoes/size/:size', shoeAPI.getBySize);
 app.get('/api/shoes/brand/:brand', shoeAPI.getByBrand);
 app.get('/api/shoes/color/:color', shoeAPI.getByColor);
