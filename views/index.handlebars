@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car API</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    {{!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>
+    --}}
+
+
+
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home"><strong>E</strong>Trandy</a>
+    </div>
+
+    <br><br><br>
+    <section class="container">
+        <div class="filter">
+            <div class="filbox">
+                <h3><strong>Filter by:</strong></h3>
+            </div>
+
+            <div class="brand">
+                <h5>Brand</h5>
+                <select name="brand" id="brand">
+                    <option value="all">ALL</option>
+                    {{#each brands}}
+                    <option value="{{id}}">{{brand}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="size">
+                <h5>Size</h5>
+                <select name="brand" id="size">
+                    <option value="all">ALL</option>
+                    {{#each sizes}}
+                    <option value="{{id}}">{{size}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+
+            <div class="color">
+                <h5>Color</h5>
+                <select name="brand" id="color">
+                    <option value="all">ALL</option>
+                    {{#each colors}}
+                    <option value="{{id}}">{{color}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            
+            <br>
+
+            <div class="search">
+                <button type="submit" class="search">SEARCH</button>
+            </div>
+
+        </div>
+        <div class="products">
+            {{#each products}}
+            <span>
+                <div class="data">
+                    <div class="cardhead">{{brand}}</div>
+                    <img src="./img/image.png">
+                    <hr>
+
+                    <span><strong>Size:</strong>{{size}}</span>
+                    <span><strong>Color:</strong>{{color}}</span><br>
+                    <span><strong>Price:</strong>R{{price}}</span>
+                    <span><strong>In-stock:</strong>{{in_stock}}</span>
+
+                </div>
+            </span>
+            {{/each}}
+        </div>
+
+
+
+
+
+    </section>
+
+
+</body>
+
+</html>

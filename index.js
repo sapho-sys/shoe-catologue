@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import flash from "express-flash";
 import DataFactory from "./services/data-factory.js";
 import ShoeAPI from "./shoe_api/products_api.js";
-// import ProductService from "./public/js/products.js"
+import ProductService from "./routes/routes.js";
 import pgPromise from "pg-promise";
 const app = express();
 const pgp = pgPromise({});
@@ -49,9 +49,10 @@ app.use(flash());
 
 
 const dataFactory = DataFactory(db);
-// const ProductRoute = ProductService(dataFactory);
+const ProductRoute = ProductService(dataFactory,db);
 const shoeAPI = ShoeAPI(dataFactory);
 
+//API end-points
 app.get('/api/shoes', shoeAPI.getData);
 app.get('/api/shoes/size/:size', shoeAPI.getBySize);
 app.get('/api/shoes/brand/:brand', shoeAPI.getByBrand);
@@ -59,6 +60,11 @@ app.get('/api/shoes/color/:color', shoeAPI.getByColor);
 app.get('/api/shoes/color/:color/brand/:brand/size/:size', shoeAPI.getByAll);
 
 
+app.get('/', ProductRoute.fetchData);
+app.get('/products/shoes/size/:size', ProductRoute.fetchBySize);
+app.get('/products/shoes/brand/:brand', ProductRoute.fetchByBrand);
+app.get('/products/shoes/color/:color', ProductRoute.fetchByColor);
+app.get('/products/shoes/color/:color/brand/:brand/size/:size', ProductRoute.fetchByAll);
 
 
 

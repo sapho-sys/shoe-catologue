@@ -1,6 +1,7 @@
 function DataFactory(db){
     async function getAll(){
-        const fethData = await db.manyOrNone(`SELECT * FROM shoes WHERE in_stock > 0`);    
+        const fethData = await db.manyOrNone(`SELECT * FROM shoes
+         WHERE in_stock > 0`);    
         return fethData;
     }
     
@@ -25,15 +26,16 @@ function DataFactory(db){
     async function applyAll(color, brand , size){
         const getAll = await db.manyOrNone(`SELECT * FROM shoes WHERE
         color =$1 AND brand = $2 AND size = $3 AND in_stock > 0`[color,brand, size]);
-       
+        return getAll;
     }
-    return{
+
+  
+    return {
         getAll,
         getSize,
         getBrand,
         getColor,
         applyAll
-
     }
 
 }
